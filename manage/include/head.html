@@ -17,12 +17,4 @@
   <link rel="stylesheet" href="//cdn.datatables.net/plug-ins/1.10.6/integration/bootstrap/3/dataTables.bootstrap.css">
   <script src="//cdn.datatables.net/tabletools/2.2.4/js/dataTables.tableTools.min.js"></script>
   <link rel="stylesheet" href="//cdn.datatables.net/tabletools/2.2.4/css/dataTables.tableTools.css">
-  <script>
-    function showtime(){
-　    document.getElementById('showclock').innerHTML = '目前時間：' + new Date().toLocaleString() + ' 星期' + '日一二三四五六'.charAt(new Date().getDay());
-  　  setTimeout('showtime()',1000);
-    }
-    window.onload = function () {
-      showtime();
-    }
-  </script>
+  <script src="../clock.js"></script>

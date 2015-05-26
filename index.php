@@ -14,15 +14,7 @@
   <script src="//cdn.jsdelivr.net/alertify.js/0.3.11/alertify.js"></script>
   <link rel="stylesheet" href="//cdn.jsdelivr.net/alertify.js/0.3.11/themes/alertify.core.css">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/alertify.js/0.3.11/themes/alertify.default.css">
-  <script>
-    function showtime(){
-　    document.getElementById('showclock').innerHTML = '目前時間：' + new Date().toLocaleString() + ' 星期' + '日一二三四五六'.charAt(new Date().getDay());
-  　  setTimeout('showtime()',1000);
-    }
-    window.onload = function () {
-      showtime();
-    }
-  </script>
+  <script src="clock.js"></script>
 </head>
 <body>
 <div class="container-fluid">

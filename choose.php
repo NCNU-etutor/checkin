@@ -1,13 +1,3 @@
-<form id="form1" name="form1" method="post" action="">
-總數：
-<input type="text" name="total" id="total" />
-<br />
-排除：
-<input name="except" type="text" id="except"  />
-<br />
-<input type="submit" name="button" id="button" value="送出" />
-</form>
-<hr>
 <?php
 if(isset($_POST['total'])){
         //$filename = "used.txt";

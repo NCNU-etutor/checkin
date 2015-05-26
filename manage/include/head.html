@@ -1,0 +1,28 @@
+  <meta charset="UTF-8">
+  <title>簽到系統</title>
+  <link rel="shortcut icon" href="../favicon.ico" />
+  <!-- JQuery from google -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <!-- BootStrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <!-- alertify -->
+  <script src="//cdn.jsdelivr.net/alertify.js/0.3.11/alertify.js"></script>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/alertify.js/0.3.11/themes/alertify.core.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/alertify.js/0.3.11/themes/alertify.default.css">
+  <!-- dataTables -->
+  <script src="//cdn.datatables.net/1.10.6/js/jquery.dataTables.min.js"></script>
+  <script src="//cdn.datatables.net/plug-ins/1.10.6/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+  <link rel="stylesheet" href="//cdn.datatables.net/plug-ins/1.10.6/integration/bootstrap/3/dataTables.bootstrap.css">
+  <script src="//cdn.datatables.net/tabletools/2.2.4/js/dataTables.tableTools.min.js"></script>
+  <link rel="stylesheet" href="//cdn.datatables.net/tabletools/2.2.4/css/dataTables.tableTools.css">
+  <script>
+    function showtime(){
+　    document.getElementById('showclock').innerHTML = '目前時間：' + new Date().toLocaleString() + ' 星期' + '日一二三四五六'.charAt(new Date().getDay());
+  　  setTimeout('showtime()',1000);
+    }
+    window.onload = function () {
+      showtime();
+    }
+  </script>

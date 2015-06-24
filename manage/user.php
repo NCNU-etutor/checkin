@@ -7,7 +7,6 @@ p.inline {
     display: inline;
 }
 </style>
-</style>
 </head>
 <body>
 <div class="container">

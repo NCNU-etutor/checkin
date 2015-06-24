@@ -3,13 +3,10 @@
 <head>
 <?php require("include/head.html");?>
 <style>
-.onlinetool, .historytool{
-    float: left;
-    text-align: center;
-}
 p.inline {
     display: inline;
 }
+</style>
 </style>
 </head>
 <body>
@@ -94,60 +91,31 @@ p.inline {
     </div><!--End of modal-dialog-->
   </div><!--End of edituserModal-->
 
-  <ul id="userTab" class="nav nav-tabs" role="tablist">
-    <li class="active"><a href="#online" role="tab" data-toggle="tab">線上</a></li>
-    <li><a href="#history" role="tab" data-toggle="tab">歷史</a></li>
-  </ul>
+  <table class="table table-hover" id="onlinetable">
+    <thead><tr>
+      <th>姓名&nbsp;
+        <input type="button" class="btn-link btn-xs" id="openadd" value="新增" data-toggle="modal" data-target="#adduserModal">
+      </th>
+      <th>學號</th>
+      <th>系級</th>
+      <th>卡號</th>
+      <th>所教學校</th>
+      <th>狀態</th>
+      <th>上課簽到次數(不含活動)</th>
+    </tr></thead>
+    <tbody>
 
-  <div id="userTabContent" class="tab-content">
-    <div class="tab-pane fade in active" id="online">
-      <div class="onlinetool"></div>
-      <table class="table table-hover" id="onlinetable">
-        <thead><tr>
-          <th>姓名&nbsp;
-            <input type="button" class="btn-link btn-xs" id="openadd" value="新增" data-toggle="modal" data-target="#adduserModal">
-          </th>
-          <th>學號</th>
-          <th>系級</th>
-          <th>卡號</th>
-          <th>所教學校</th>
-          <th>上課簽到次數(不含活動)</th>
-        </tr></thead>
-        <tbody>
-
-        </tbody>
-        <tfoot><tr>
-          <th>姓名</th>
-          <th>學號</th>
-          <th>系級</th>
-          <th>卡號</th>
-          <th>所教學校</th>
-          <th>上課簽到次數(不含活動)</th>
-        </tr></tfoot>
-      </table>
-    </div><!--End of online-->
-
-    <div class="tab-pane fade" id="history">
-      <div class="historytool"></div>
-      <table class="table table-hover" id="historytable">
-        <thead><tr>
-          <th>姓名</th>
-          <th>學號</th>
-          <th>系級</th>
-          <th>卡號</th>
-        </tr></thead>
-        <tbody>
-
-        </tbody>
-        <tfoot><tr>
-          <th>姓名</th>
-          <th>學號</th>
-          <th>系級</th>
-          <th>卡號</th>
-        </tr></tfoot>
-      </table>
-    </div><!--End of history-->
-  </div><!--End of TabContent-->
+    </tbody>
+    <tfoot><tr>
+      <th>姓名</th>
+      <th>學號</th>
+      <th>系級</th>
+      <th>卡號</th>
+      <th>所教學校</th>
+      <th>狀態</th>
+      <th>上課簽到次數(不含活動)</th>
+    </tr></tfoot>
+  </table>
 </div><!-- End of container -->
 
 <script>
@@ -171,7 +139,7 @@ p.inline {
 
     online = $('#onlinetable').dataTable( {
       "ajax": {
-        "url": "ajax/online_teacher.php"
+        "url": "ajax/getteacher.php"
       },
       "language": {
         "url": "ajax/zh-tw.json"
@@ -180,7 +148,16 @@ p.inline {
         { 
           "className": "text-center", 
           "targets": -1
-        } 
+        },
+        { "targets": [ -2 ],
+          "render": function ( data ) {
+            if(data == "1") {
+              return '<input type="checkbox" data-size="mini" name="toggle" checked>';
+            } else {
+              return '<input type="checkbox" data-size="mini" name="toggle">';
+            }
+          } 
+        }
       ],
       "ordering": false,
       "lengthChange": false,
@@ -188,37 +165,31 @@ p.inline {
       "dom": '<"onlinetool">Tfrtip',
       "tableTools": {
         "sSwfPath": "//cdn.datatables.net/tabletools/2.2.4/swf/copy_csv_xls_pdf.swf"
-      }
-    } );
-
-    historyt = $('#historytable').dataTable( {
-      "ajax": {
-        "url": "ajax/history_teacher.php"
       },
-      "language": {
-        "url": "ajax/zh-tw.json"
+      "drawCallback": function( settings ) {
+        $("input[name='toggle']").bootstrapSwitch();
+        $('input[name="toggle"]').on('switchChange.bootstrapSwitch', function(event, state) {
+          $.ajax({
+            //url: "ajax/toggleuse.php",
+            data: "&uid="+this.alt+"&state="+state+"&permis="+this.placeholder,
+            type: "POST",
+            success:function(msg){
+              msg = msg.replace(/\s*$/, "");
+              if(msg == "success") {
+                //table.api().ajax.reload(null, false);
+              }else if(msg == "error") {
+                alertify.alert('沒有權限做這種事喔！');
+                table.api().ajax.reload(null, false);
+              }
+            },
+          });
+        });
       },
-      "ordering": false,
-      "lengthChange": false,
-      "pageLength": 20,
-      "dom": '<"historytool">Tfrtip',
-      "tableTools": {
-        "sSwfPath": "//cdn.datatables.net/tabletools/2.2.4/swf/copy_csv_xls_pdf.swf"
-      }
     } );
 
     setInterval( function () {
       online.api().ajax.reload(null, false);
-      historyt.api().ajax.reload(null, false);
     }, 600000 );
-
-    $("div.onlinetool").html(
-      '<input type="button" class="btn-link" id="tohistory" value="移到歷史">&nbsp;<input type="button" class="btn-link" id="disactiveonline" value="取消選取">'
-    );
-
-    $("div.historytool").html(
-      '<input type="button" class="btn-link" id="toonline" value="移回線上">&nbsp;<input type="button" class="btn-link" id="disactivehistory" value="取消選取">'
-    );
 
     alertify.set({ 
       labels: {
@@ -229,7 +200,7 @@ p.inline {
     
   } );//end of document.ready
 
-  $('#onlinetable tbody, #historytable tbody').on('click', 'tr', function () {
+  $('#onlinetable tbody').on('click', 'tr', function () {
     $(this).toggleClass('active');
   } );
 
@@ -273,14 +244,6 @@ p.inline {
         $("#edituserModal").modal("hide");
       },
     });
-  });
-
-  $(document).on("click", '#disactivehistory', function() {
-    $("#historytable tbody tr").removeClass("active");
-  });
-
-  $(document).on("click", '#disactiveonline', function() {
-    $("#onlinetable tbody tr").removeClass("active");
   });
 
   $(document).on("click", '#tohistory', function() {

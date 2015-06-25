@@ -168,8 +168,6 @@ p.inline {
       "drawCallback": function( settings ) {
         $("input[name='toggle']").bootstrapSwitch();
         $('input[name="toggle"]').on('switchChange.bootstrapSwitch', function(event, state) {
-          console.log(this.alt);
-          console.log(this.checked);
           $.ajax({
             url: "ajax/toggle.php",
             data: "&id="+this.alt+"&on="+this.checked,
@@ -177,11 +175,7 @@ p.inline {
             success:function(msg){
               msg = msg.replace(/\s*$/, "");
               if(msg == "done") {
-                alertify.alert('！');
-                //table.api().ajax.reload(null, false);
               }else if(msg == "error") {
-                alertify.alert('沒有權限做這種事喔！');
-                table.api().ajax.reload(null, false);
               }
             },
           });

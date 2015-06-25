@@ -149,11 +149,11 @@ p.inline {
           "targets": -1
         },
         { "targets": [ -2 ],
-          "render": function ( data ) {
+          "render": function ( data, type, row ) {
             if(data == "1") {
-              return '<input type="checkbox" data-size="mini" name="toggle" checked>';
+              return '<input type="checkbox" alt="' + row[1] + '" data-size="mini" name="toggle" checked>';
             } else {
-              return '<input type="checkbox" data-size="mini" name="toggle">';
+              return '<input type="checkbox" alt="' + row[1] + '" data-size="mini" name="toggle">';
             }
           } 
         }
@@ -168,13 +168,16 @@ p.inline {
       "drawCallback": function( settings ) {
         $("input[name='toggle']").bootstrapSwitch();
         $('input[name="toggle"]').on('switchChange.bootstrapSwitch', function(event, state) {
+          console.log(this.alt);
+          console.log(this.checked);
           $.ajax({
-            //url: "ajax/toggleuse.php",
-            data: "&uid="+this.alt+"&state="+state+"&permis="+this.placeholder,
+            url: "ajax/toggle.php",
+            data: "&id="+this.alt+"&on="+this.checked,
             type: "POST",
             success:function(msg){
               msg = msg.replace(/\s*$/, "");
-              if(msg == "success") {
+              if(msg == "done") {
+                alertify.alert('！');
                 //table.api().ajax.reload(null, false);
               }else if(msg == "error") {
                 alertify.alert('沒有權限做這種事喔！');
@@ -199,9 +202,9 @@ p.inline {
     
   } );//end of document.ready
 
-  $('#onlinetable tbody').on('click', 'tr', function () {
-    $(this).toggleClass('active');
-  } );
+  //$('#onlinetable tbody').on('click', 'tr', function () {
+  //  $(this).toggleClass('active');
+  //} );
 
   $('#onlinetable tbody').on('dblclick', 'tr', function () {
     $(this).addClass("editrow");

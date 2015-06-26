@@ -21,7 +21,7 @@
   <a class="btn btn-info" href="index.php">簽到區</a>
   <a class="btn btn-primary" href="manage/user.php">人員管理</a>
   <a class="btn btn-success" href="manage/log.php">簽到紀錄</a>
-  <a class="btn btn-warning" href="manage/calculate.php">活動簽到計算</a>
+  <a class="btn btn-warning" href="manage/calculate.php">活動及歷史資料</a>
   <form method="post" id="chk_form" action="" autocomplete="off">
     <div id="bibi" class="form-group">
       <p style="color:red; font-size:500%"><strong>

@@ -28,14 +28,14 @@
   <table class="table table-hover" id="logtable">
     <thead><tr>
       <th>姓名&nbsp;<input type="button" class="btn-link" id="openadd" value="補登(目前沒有用)"></th>
-      <th>簽到記錄</th>
+      <th>簽到時間</th>
     </tr></thead>
     <tbody>
 
     </tbody>
     <tfoot><tr>
       <th>姓名</th>
-      <th>簽到記錄</th>
+      <th>簽到時間</th>
     </tr></tfoot>
   </table><!-- End of logtable -->
 </div><!-- End of container -->

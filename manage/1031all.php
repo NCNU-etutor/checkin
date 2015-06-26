@@ -12,7 +12,7 @@
       <table class="table table-hover" id="1031class"> 
         <thead><tr>
           <th>姓名</th>
-          <th>簽到記錄</th>
+          <th>簽到時間</th>
         </tr></thead>
         <tbody>
         <?php
@@ -27,7 +27,7 @@
         </tbody>
         <tfoot><tr>
           <th>姓名</th>
-          <th>簽到記錄</th>
+          <th>簽到時間</th>
         </tr></tfoot>
       </table>
     </div><!-- End of 1031class -->

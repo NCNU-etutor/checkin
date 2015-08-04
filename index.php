@@ -41,7 +41,7 @@
         <td>有任何問題請先看白板~<br>
             位置隨便坐，手寫筆自取，課後記得交回來^___^
         </td>
-        <td ROWSPAN=2><img src="yuer.gif"></td>
+        <td ROWSPAN=2><img height="200" src=<?php echo "photo/Yuer".rand(1,6).".gif"; ?>></td>
       </tr>
       <tr>
         <td>請繳交帳號通知單跟學生證影本~不然大家的薪水就GG惹喔~

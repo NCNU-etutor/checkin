@@ -36,12 +36,12 @@
   <h2>
     <marquee behavior=alternate style="background-color:yellow"><strong>請確定右下角有出現綠色框框再離開←重要！！沒紀錄就當你沒有來<span style="color:red;">❤</span></strong></marquee>
     <br><br>
-    <table>
+    <table width="100%">
       <tr> 
-        <td>有任何問題請先看白板~<br>
+        <td>有任何問題請先看白板~<br><br>
             位置隨便坐，手寫筆自取，課後記得交回來^___^
         </td>
-        <td ROWSPAN=2><img height="200" src=<?php echo "photo/Yuer".rand(1,6).".gif"; ?>></td>
+        <td ROWSPAN=2><img height="350" src=<?php echo "photo/Yuer".rand(1,6).".gif"; ?>></td>
       </tr>
       <tr>
         <td>請繳交帳號通知單跟學生證影本~不然大家的薪水就GG惹喔~
@@ -50,7 +50,7 @@
       </tr>
       <tr>
         <td ALIGN=CENTER COLSPAN=2>
-          <span style="color:red;">新同學麻煩請將學生證交給工作人員，方便建檔<br>
+          <span style="color:red;">新同學麻煩請將學生證交給工作人員，方便建檔<br><br>
                                    之後參與計畫活動都需要用學生證簽到喔^__^
           </span>
         </td>
@@ -58,8 +58,8 @@
     </table>
   </h2>
   <br>
-  <p style="color:red; font-size:850%">
-    下課垃圾請帶走!!!
+  <p ALIGN=CENTER style="color:red; font-size:850%">
+    下 課 垃 圾 請 帶 走 !!!
   </p>
   <script>
     $(document).ready(function(){

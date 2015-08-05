@@ -2,15 +2,11 @@
 <html>
 <head>
 <?php require("include/head.html");?>
-<style>
-p.inline {
-    display: inline;
-}
 </style>
 </head>
 <body>
-<div class="container">
 <?php require("include/menu.php");?>
+<div class="container">
   <div class="modal fade" id="adduserModal" tabindex="-1" role="dialog" aria-labelledby="adduserModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">

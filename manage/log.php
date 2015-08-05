@@ -4,8 +4,8 @@
 <?php require("include/head.html");?>
 </head>
 <body>
-<div class="container">
 <?php require("include/menu.php");?>
+<div class="container">
 
   <div id="addcheckin">
     <form name="addcheckin" method="post" action="" autocomplete="off">

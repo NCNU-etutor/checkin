@@ -4,8 +4,8 @@
 <?php require("include/head.html");?>
 </head>
 <body>
-<div class="container">
 <?php require("include/menu.php");?>
+<div class="container">
 <?php
 require("../connect.php");
 ?>

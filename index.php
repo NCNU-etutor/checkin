@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>簽到系統</title>
   <link rel="shortcut icon" href="favicon.ico" />
   <!-- JQuery from google -->
@@ -17,11 +18,28 @@
   <script src="clock.js"></script>
 </head>
 <body>
-<div class="container-fluid">
-  <a class="btn btn-info" href="index.php">簽到區</a>
-  <a class="btn btn-primary" href="manage/user.php">人員管理</a>
-  <a class="btn btn-success" href="manage/log.php">簽到紀錄</a>
-  <a class="btn btn-warning" href="manage/calculate.php">活動及歷史資料</a>
+ <nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.php">簽到區</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="manage/user.php">人員管理</a></li>
+          <li><a href="manage/log.php">簽到紀錄</a></li>
+          <li><a href="manage/calculate.php">活動及歷史資料</a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div>
+  </nav>
+<div class="container">
   <form method="post" id="chk_form" action="" autocomplete="off">
     <div id="bibi" class="form-group">
       <p style="color:red; font-size:500%"><strong>
@@ -59,7 +77,7 @@
   </h2>
   <br>
   <p ALIGN=CENTER style="color:red; font-size:850%">
-    下 課 垃 圾 請 帶 走 !!!
+    下課垃圾請帶走!!!
   </p>
   <script>
     $(document).ready(function(){

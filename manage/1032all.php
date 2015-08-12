@@ -1,12 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<?php require("include/head.html");?>
+</head>
+<body>
+<?php require("include/menu.php");?>
+<div class="container">
+<?php
+require("../connect.php");
+?>
   <ul id="Tab" class="nav nav-tabs" role="tablist">
-    <li><a href="#1032classtab" role="tab" data-toggle="tab">上課簽到</a></li>
+    <li class="active"><a href="#1032classtab" role="tab" data-toggle="tab">上課簽到</a></li>
     <li><a href="#1032firsttab" role="tab" data-toggle="tab">期初教育訓練</a></li>
     <li><a href="#1032meettab" role="tab" data-toggle="tab">相見歡</a></li>
     <li><a href="#1032wedtab" role="tab" data-toggle="tab">星期三</a></li>
   </ul>
 
   <div id="userTabContent" class="tab-content">
-    <div class="tab-pane fade" id="1032classtab">
+    <div class="tab-pane fade in active" id="1032classtab">
       <table class="table table-hover" id="1032class">
         <thead><tr>
           <th>姓名</th>
@@ -119,3 +130,7 @@
     $("#1032class, #1032first, #1032meet, #1032wed").DataTable(opt);
   });
 </script>
+</div><!-- End of container -->
+<?php require("include/footer.html"); ?>
+</body>
+</html>

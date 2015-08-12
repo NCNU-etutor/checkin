@@ -14,7 +14,17 @@
         <ul class="nav navbar-nav">
           <li><a href="user.php">人員管理</a></li>
           <li><a href="log.php">簽到紀錄</a></li>
-          <li><a href="calculate.php">活動及歷史資料</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">活動及歷史資料 <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="1031all.php">1031學年度</a></li>
+              <li><a href="1032all.php">1032學年度</a></li>
+              <!--<li role="separator" class="divider"></li>-->
+              <!--<li><a href="#">Separated link</a></li>-->
+              <!--<li role="separator" class="divider"></li>-->
+              <!--<li><a href="#">One more separated link</a></li>-->
+            </ul>
+          </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><p id="showclock" class="navbar-text"></p></li>

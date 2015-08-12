@@ -1,5 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<?php require("include/head.html");?>
+</head>
+<body>
+<?php require("include/menu.php");?>
+<div class="container">
+<?php
+require("../connect.php");
+?>
   <ul id="Tab" class="nav nav-tabs" role="tablist">
-    <li><a href="#1031classtab" role="tab" data-toggle="tab">上課簽到</a></li>
+    <li class="active"><a href="#1031classtab" role="tab" data-toggle="tab">上課簽到</a></li>
     <li><a href="#1031Wedtab" role="tab" data-toggle="tab">週三輔導</a></li>
     <li><a href="#1031hezuotab" role="tab" data-toggle="tab">合作相見歡</a></li>
     <li><a href="#1031pingjingtab" role="tab" data-toggle="tab">平靜相見歡</a></li>
@@ -8,7 +19,7 @@
     <li><a href="#1031endingtab" role="tab" data-toggle="tab">期末</a></li>
   </ul>
   <div id="userTabContent" class="tab-content">
-    <div class="tab-pane fade" id="1031classtab">
+    <div class="tab-pane fade in active" id="1031classtab">
       <table class="table table-hover" id="1031class"> 
         <thead><tr>
           <th>姓名</th>
@@ -210,3 +221,7 @@
     $("#1031class, #1031Wed, #1031yges, #1031yuchih, #1031pingjing, #1031hezuo, #1031ending").DataTable(opt);
   });
 </script>
+</div><!-- End of container -->
+<?php require("include/footer.html"); ?>
+</body>
+</html>

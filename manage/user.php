@@ -157,10 +157,6 @@
       "ordering": false,
       "lengthChange": false,
       "pageLength": 20,
-      "dom": '<"onlinetool">Tfrtip',
-      "tableTools": {
-        "sSwfPath": "//cdn.datatables.net/tabletools/2.2.4/swf/copy_csv_xls_pdf.swf"
-      },
       "drawCallback": function( settings ) {
         $("input[name='toggle']").bootstrapSwitch();
         $('input[name="toggle"]').on('switchChange.bootstrapSwitch', function(event, state) {

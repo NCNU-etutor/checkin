@@ -53,10 +53,9 @@ require("../connect.php");
         </tr></thead>
         <tbody>
         <?php
-          foreach($dbh->query("SELECT * FROM user LEFT JOIN(
-                                 SELECT CardNum as C, count(DateTime) as 'times' FROM 1031Wed_log
-                                 GROUP BY CardNum
-                               )as test ON user.CardNum = test.C ORDER BY Name;") as $wed) {
+          foreach($dbh->query("select * from
+                               (SELECT CardNum as C, count(DateTime) as 'times' FROM 1031Wed_log GROUP BY CardNum) as login
+                               LEFT JOIN user on login.C = user.CardNum;") as $wed) {
             if($wed['times'] == "") $wed['times']=0;
             echo "<tr><td>".$wed['Name'];
             echo "</td><td>".$wed['Sid'];

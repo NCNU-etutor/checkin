@@ -30,7 +30,8 @@
     $outp .= "\""  . $rs["Card"]     . "\",";
     $outp .= "\""  . $rs["School"]   . "\",";
     $outp .= "\""  . $rs["InUse"]   . "\",";
-    $outp .= "\""   .$rs["times"]    . "次\"]";
+    $outp .= "\""  .$rs["times"]    . "次\"]";
+    json_encode($outp, JSON_UNESCAPED_UNICODE);
     if($key != $count-1){
       $outp .= ","; // not the last element
     }

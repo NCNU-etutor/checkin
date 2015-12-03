@@ -108,9 +108,7 @@
         type: "POST",
         success:function(msg){
           msg = msg.replace(/\s*$/, "");
-          if(msg == "wed_success")
-            alertify.log('星期三午間簽到成功！', 'success', '3000');
-          else if(msg == "sucess")
+          if(msg == "sucess")
             alertify.log('簽到成功！', 'success', '3000');
           else if(msg == "already")
             alertify.log('已簽到過！', 'error', '3000'); 

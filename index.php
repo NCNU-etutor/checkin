@@ -71,13 +71,12 @@
         <td ROWSPAN=2><img height="300" src=<?php echo "photo/Yuer".rand(1,6).".gif"; ?>></td>
       </tr>
       <tr>
-        <!--<td>請繳交帳號通知單跟學生證影本~不然大家的薪水就GG惹喔~-->
-             <!-- <br> ↑沒交的人已放生~^_< -->
-        <!--</td>-->
-        <td>
+        <td>請繳交帳號通知單跟學生證影本~不然大家的薪水就GG惹喔~<br> ↑沒交的人已放生~^_< 
+        </td>
+        <!--<td>
           </br>請還沒報名相見歡的同學到 </br></br>http://nasc.kktix.cc/events/5c922865</br>
           或是利用QR code<img src="http://s01.calm9.com/qrcode/2015-11/LMCUMU2C3V.png">報名
-        </td>
+        </td>-->
       </tr>
       <tr>
         <td ALIGN=CENTER COLSPAN=2> 

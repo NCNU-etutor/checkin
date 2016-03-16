@@ -147,9 +147,9 @@
         { "targets": [ -2 ],
           "render": function ( data, type, row ) {
             if(data == "1") {
-              return '<input type="checkbox" alt="online" data-size="mini" name="toggle" checked>';
+              return '<input type="checkbox" alt="online" data-userid="' + row[1] + '" data-size="mini" name="toggle" checked>';
             } else {
-              return '<input type="checkbox" alt="offline" data-size="mini" name="toggle">';
+              return '<input type="checkbox" alt="offline" data-userid="' + row[1] + '" data-size="mini" name="toggle">';
             }
           } 
         }
@@ -162,7 +162,7 @@
         $('input[name="toggle"]').on('switchChange.bootstrapSwitch', function(event, state) {
           $.ajax({
             url: "ajax/toggle.php",
-            data: "&id="+this.alt+"&on="+this.checked,
+            data: "&id="+$(this).data('userid')+"&on="+this.checked,
             type: "POST",
             success:function(msg){
               msg = msg.replace(/\s*$/, "");

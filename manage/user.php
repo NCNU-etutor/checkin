@@ -147,9 +147,9 @@
         { "targets": [ -2 ],
           "render": function ( data, type, row ) {
             if(data == "1") {
-              return '<input type="checkbox" alt="' + row[1] + '" data-size="mini" name="toggle" checked>';
+              return '<input type="checkbox" alt="online" data-size="mini" name="toggle" checked>';
             } else {
-              return '<input type="checkbox" alt="' + row[1] + '" data-size="mini" name="toggle">';
+              return '<input type="checkbox" alt="offline" data-size="mini" name="toggle">';
             }
           } 
         }

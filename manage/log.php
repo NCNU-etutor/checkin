@@ -6,28 +6,37 @@
 <body>
 <?php require("include/menu.php");?>
 <div class="container">
-
-  <div id="addcheckin">
-    <form name="addcheckin" method="post" action="" autocomplete="off">
-      <div class="form-group">
-        姓名
-        <select name="name">
-　        <option value="">*</option>
-        </select>
-      </div>
-      <div class="form-group">
-        補簽日期時間
-        <input id="dt" type="date" placeholder="2014-09-18">
-      </div>
-      <div class="form-group">
-        <input type="submit" class="btn btn-default" value="送出">
-      </div>
-    </form>
-  </div><!-- End of addcheckin -->
+  <div class="modal fade" id="addcheckinModal" tabindex="-1" role="dialog" aria-labelledby="addcheckinModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="addcheckinModalLabel">補登簽到</h4>
+        </div>
+        <div class="modal-body">
+          <form name="addcheckin" method="post" action="" autocomplete="off">
+            <div class="form-group">
+              姓名
+              <select name="name">
+　              <option value="">*</option>
+              </select>
+            </div>
+            <div class="form-group">
+              補簽日期時間
+              <input id="dt" type="date" placeholder="2014-09-18">
+            </div>
+            <div class="form-group">
+              <input type="submit" class="btn btn-default" value="送出">
+            </div>
+          </form>
+        </div><!--End of modal-body-->
+      </div><!--End of modal-content-->
+    </div><!--End of modal-dialog-->
+  </div><!--End of addcheckinModal-->
 
   <table class="table table-hover" id="logtable">
     <thead><tr>
-      <th>姓名&nbsp;<input type="button" class="btn-link" id="openadd" value="補登(目前沒有用)"></th>
+      <th>姓名&nbsp;<input type="button" class="btn-link" data-toggle="modal" data-target="#addcheckinModal" value="補登(測試中)"></th>
       <th>簽到時間</th>
     </tr></thead>
     <tbody>

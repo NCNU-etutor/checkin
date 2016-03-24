@@ -89,7 +89,7 @@
   <table class="table table-hover" id="onlinetable">
     <thead><tr>
       <th>姓名&nbsp;
-        <input type="button" class="btn-link btn-xs" id="openadd" value="新增" data-toggle="modal" data-target="#adduserModal">
+        <input type="button" class="btn-link" id="openadd" value="新增" data-toggle="modal" data-target="#adduserModal">
       </th>
       <th>學號</th>
       <th>系級</th>

@@ -55,7 +55,7 @@
   <form method="post" id="chk_form" action="" autocomplete="off">
     <div id="bibi" class="form-group">
       <p style="color:red; font-size:500%"><strong>
-        ↑↑↑↑ 請感應學生證簽到！ ↑↑↑↑
+        &darr;&darr; 請感應學生證簽到！ &darr;&darr;
       </strong></p>
       <div style="display:inline" id="showclock"></div>
       <input type="tel" class="form-control" name="cardnum" id="cardnum" style="ime-mode: disabled;" autofocus>
